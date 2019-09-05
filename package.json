@@ -21,6 +21,7 @@
     "dist/"
   ],
   "devDependencies": {
+    "@ionic-enterprise/react-component-lib": "0.0.1",
     "@types/jest": "23.3.9",
     "@types/node": "10.12.9",
     "@types/react": "16.7.6",
