@@ -1,54 +1,84 @@
 {
   "name": "component-library-react",
-  "sideEffects": false,
   "version": "0.0.1",
-  "private": true,
   "description": "React specific wrapper for component-library",
+  "keywords": [
+    "stencil",
+    "framework",
+    "react",
+    "mobile",
+    "app",
+    "hybrid",
+    "webapp",
+    "cordova",
+    "progressive web app",
+    "pwa"
+  ],
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/ionic.git"
+    "url": "https://github.com/ionic-team/stencil-ds-react-template.git"
   },
   "scripts": {
-    "build": "npm run clean && npm run compile && npm run rollup",
-    "clean": "rm -rf dist",
-    "compile": "npm run tsc",
+    "build": "npm run clean && npm run copy && npm run compile",
+    "clean": "rm -rf dist && rm -rf dist-transpiled",
+    "compile": "npm run tsc && rollup -c",
+    "release": "np --any-branch --yolo --no-release-draft",
+    "lint": "tslint --project .",
+    "lint.fix": "tslint --project . --fix",
     "tsc": "tsc -p .",
-    "rollup": "rollup -c"
+    "copy": "node scripts/copy.js",
+    "test.treeshake": "node scripts/treeshaking.js dist/index.esm.js"
   },
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.es.js",
-  "types": "./dist/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/types/index.d.ts",
   "files": [
-    "dist/"
+    "dist/",
+    "css/"
   ],
-  "devDependencies": {
-    "@ionic-enterprise/react-component-lib": "0.0.1",
-    "@types/jest": "23.3.9",
-    "@types/node": "10.12.9",
-    "@types/react": "16.7.6",
-    "@types/react-dom": "16.0.9",
-    "jest": "^23.0.0",
-    "jest-dom": "^3.0.2",
-    "np": "^3.1.0",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "rollup": "^1.21.2",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "typescript": "^3.3.4000"
-  },
   "dependencies": {
-    "component-library": "^0.0.1"
+    "component-library": "0.0.1",
+    "tslib": "*"
   },
   "peerDependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "@types/node": "10.12.9",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "fs-extra": "^8.1.0",
+    "jest": "^24.8.0",
+    "jest-dom": "^3.4.0",
+    "np": "^5.0.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-testing-library": "^7.0.0",
+    "rollup": "^1.18.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-virtual": "^1.0.1",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "tslint-ionic-rules": "0.0.21",
+    "tslint-react": "^4.0.0"
   },
   "jest": {
     "preset": "ts-jest",
-    "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js",
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup.js"
+    ],
     "testPathIgnorePatterns": [
       "node_modules",
-      "dist"
+      "dist-transpiled",
+      "dist",
+      "test-app"
+    ],
+    "modulePaths": [
+      "<rootDir>"
     ]
   }
 }

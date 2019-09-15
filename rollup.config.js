@@ -1,21 +1,21 @@
-import pkg from './package.json';
 import resolve from 'rollup-plugin-node-resolve';
+import sourcemaps from 'rollup-plugin-sourcemaps';
 
 export default {
-  input: 'dist/index.js',
-
-  external: ['component-library', 'component-library/loader', 'react', 'react-dom'],
-
-  plugins: [resolve()],
-
+  input: 'dist-transpiled/index.js',
   output: [
     {
-      format: 'cjs',
-      file: pkg.main
+      file: 'dist/index.esm.js',
+      format: 'es',
+      sourcemap: true
     },
     {
-      format: 'es',
-      file: pkg.module
+      file: 'dist/index.js',
+      format: 'commonjs',
+      preferConst: true,
+      sourcemap: true
     }
-  ]
+  ],
+  external: id => !/^(\.|\/)/.test(id),
+  plugins: [resolve(), sourcemaps()]
 };
