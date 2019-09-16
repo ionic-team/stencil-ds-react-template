@@ -39,7 +39,7 @@ Here we've called the Stencil component library being wrapped `component-library
 - Change directory: `cd component-library`, install `npm i` and build `npm run build`
 - Publish: `npm publish --registry http://localhost:4873`
 
-1. Create and publish a React wrapper libary for the one above
+3. Create and publish a React wrapper libary for the one above
 
 - Clone: `git clone https://github.com/ionic-team/stencil-ds-react-template.git`
 - Leave the defaults in place and cd `cd stencil-ds-react-template`, install `npm i` and build `npm run build`
