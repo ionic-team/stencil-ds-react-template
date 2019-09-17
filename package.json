@@ -9,7 +9,7 @@
     "url": "https://github.com/ionic-team/ionic.git"
   },
   "scripts": {
-    "build": "npm run clean && npm run compile && npm run rollup",
+    "build": "npm run clean && npm run compile",
     "clean": "rm -rf dist",
     "compile": "npm run tsc",
     "tsc": "tsc -p .",
@@ -22,7 +22,6 @@
     "dist/"
   ],
   "devDependencies": {
-    "@ionic-enterprise/react-component-lib": "0.0.1",
     "@types/jest": "23.3.9",
     "@types/node": "10.12.9",
     "@types/react": "16.7.6",
@@ -32,8 +31,6 @@
     "np": "^3.1.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "rollup": "^1.21.2",
-    "rollup-plugin-node-resolve": "^5.2.0",
     "typescript": "^3.3.4000"
   },
   "dependencies": {
