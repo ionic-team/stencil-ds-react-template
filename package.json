@@ -12,8 +12,7 @@
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf dist",
     "compile": "npm run tsc",
-    "tsc": "tsc -p .",
-    "rollup": "rollup -c"
+    "tsc": "tsc -p ."
   },
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.js",
