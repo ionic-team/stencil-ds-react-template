@@ -1,7 +1,7 @@
 /* 
 
 auto-generated react proxies will replace this file 
-if you use "../your-react-library-name/src/components/stencil/index.ts" for your proxies target:
+if you use "../your-react-library-name/src/components/stencil-generated/index.ts" for your proxies target:
 
 */
 
