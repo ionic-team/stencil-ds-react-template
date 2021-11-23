@@ -1,1 +1,1 @@
-export * from "./stencil/index";
+export * from "./stencil-generated/index";

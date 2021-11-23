@@ -12,7 +12,7 @@ export const config: Config = {
   outputTargets: [
     react({
       componentCorePackage: 'your-stencil-library-name',
-      proxiesFile: '../your-react-library-name/src/components/stencil/index.ts',
+      proxiesFile: '../your-react-library-name/src/components/stencil-generated/index.ts',
       includeDefineCustomElements: true,
     });
     {
