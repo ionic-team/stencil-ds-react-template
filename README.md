@@ -1,5 +1,13 @@
 # stencil-ds-react-template
 
+⚠️ This project has been archived. ⚠️
+
+This project is no longer actively maintained.
+
+Please see the [Stencil documentation for using the React Framework Wrapper](https://stenciljs.com/docs/react) for instructions as to how to use [`@stencil/react-output-target`](https://www.npmjs.com/package/@stencil/react-output-target)
+
+--- 
+
 This is an example repo of building plugins.
 
 ## Step 1.
